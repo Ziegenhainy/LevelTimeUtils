@@ -1,3 +1,6 @@
+# 1.0.0-beta.3
+- Smaller Logo
+
 # 1.0.0-beta.2
 - Update Logo
 
