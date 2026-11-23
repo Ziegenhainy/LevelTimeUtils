@@ -1,0 +1,21 @@
+{
+	"geode": "6.0.0-beta.1",
+	"gd": {
+		"win": "2.2091",
+		"android": "2.2091",
+		"mac": "2.2091",
+		"ios": "2.2091"
+	},
+	"id": "ziegenhainy.leveltimeutils",
+	"name": "LevelTimeUtils",
+	"version": "v1.0.0-beta.1",
+	"developer": "Ziegenhainy",
+	"description": "Tools for editing level time for percentage",
+	"dependencies": {
+		"geode.node-ids": ">=v1.23.3"
+	},
+	"tags": [
+		"offline",
+		"utility"
+	]
+}
