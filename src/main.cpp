@@ -36,10 +36,10 @@ class $modify(HookedPlayLayer, PlayLayer) {
 	void onMyButton(CCObject*) {
 		// FLAlertLayer::create("Geode", fmt::format("Nya is {}, boobie is {}", this->m_playLayer->m_level->m_timestamp, static_cast<HookedPlayLayer*>(this->m_playLayer)->m_fields->m_tempTimestamp), "OK")->show();
 		geode::createQuickPopup(
-			"Override Level Length :33",
+			"Override Level Length",
 			"Are you sure you wanna override the level time?", 
-			"no!", 
-			"Sure :3",
+			"Cancel", 
+			"Yes",
 			[this](auto, bool btn2) {
 				if (btn2) {
 					log::info("{} {}", m_level->m_dontSave,m_level->m_savedTime);
