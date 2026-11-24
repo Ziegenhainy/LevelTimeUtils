@@ -1,5 +1,6 @@
 #include "Geode/cocos/CCDirector.h"
 #include "Geode/ui/Popup.hpp"
+#include <Geode/Enums.hpp>
 #include <Geode/Geode.hpp>
 #include <Geode/binding/GJBaseGameLayer.hpp>
 #include <Geode/binding/GJGameLevel.hpp>
@@ -55,7 +56,7 @@ class $modify(HookedPlayLayer, PlayLayer) {
 class $modify(HookedPauseLayer, PauseLayer) {
 	void customSetup() {
 		PauseLayer::customSetup();
-		if (PlayLayer::get() == nullptr || !PlayLayer::get()->m_level->m_localOrSaved) return;
+		if (PlayLayer::get() == nullptr || PlayLayer::get()->m_level->m_levelType != GJLevelType::Editor) return;
 
 		auto myButton = CCMenuItemSpriteExtra::create(
 			CCSprite::createWithSpriteFrameName("threadBtn_timeOn_001.png"),
@@ -80,7 +81,7 @@ class $modify(HookedEndLevelLayer, EndLevelLayer) {
 	// }
 	void showLayer(bool instant) {
 		EndLevelLayer::showLayer(instant);
-		if (!m_playLayer->m_level->m_localOrSaved) return;
+		if (m_playLayer->m_level->m_levelType != GJLevelType::Editor) return;
 		log::debug("Hello from my playLayer::init hook! This layer has {} children.", this->getChildrenCount());
 
 		auto myButton = CCMenuItemSpriteExtra::create(
